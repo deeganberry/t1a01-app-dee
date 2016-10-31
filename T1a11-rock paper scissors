@@ -1,0 +1,113 @@
+<h1 align=center>ROCK, PAPER, SCISSORS, BY DEEGAN </h1>
+
+<script>
+   
+   document.myTotalAttempts = 0
+   
+   document.myTotalWins = 0
+  
+   document.myTotalLosses = 0
+    
+   
+</script>
+
+<body bgcolor="ForestGreen">
+    
+Attempts <input type=text id="myAttempts" value=0> 
+
+Wins <input type=text id="myWins" value=0> 
+
+
+Losses <input type=text id="myLosses" value=0> 
+
+<input type=button value="Rock" onclick="{
+   document.myOutcome = ''
+   document.myRandom = Math.floor(Math.random()*3)+1 
+   document.myTotalAttempts +=1
+
+   if (document.myRandom == 1){
+      document.myOutcome = 'Tie'
+   }
+   if (document.myRandom == 2){
+      document.myOutcome = 'win'
+      document.myTotalWins +=1
+   }
+   if (document.myRandom == 3){
+      document.myOutcome = 'lose'
+       document.myTotalLosses += 1
+   }
+   
+   document.getElementById('myOut').innerHTML = 'Rock ' + document.myOutcome
+   document.all.myAttempts.value =  document.myTotalAttempts
+       
+   document.all.myWins.value =  document.myTotalWins
+         document.all.myLosses.value = document.myTotalLosses
+        }">
+       
+       <input type=button value="Paper" onclick="{
+   document.myOutcome = ''
+   document.myRandom = Math.floor(Math.random()*3)+1 
+   document.myTotalAttempts +=1
+   
+   
+   if (document.myRandom == 1){
+   document.myOutcome = 'Tie'
+   }
+        if (document.myRandom == 2){
+   document.myOutcome = 'win'
+     document.myTotalWins +=1
+   }
+      if (document.myRandom == 3){
+   document.myOutcome = 'lose'
+    document.myTotalLosses += 1
+   }
+   
+   document.getElementById('myOut').innerHTML = 'Paper ' + document.myOutcome
+    document.all.myAttempts.value =  document.myTotalAttempts
+        
+         
+   document.all.myWins.value =  document.myTotalWins
+      document.all.myLosses.value = document.myTotalLosses
+    }">
+       
+       <input type=button value="Scissors" onclick="{
+   document.myOutcome = ''
+   document.myRandom = Math.floor(Math.random()*3)+1 
+    document.myTotalAttempts +=1
+   
+   
+   
+   if (document.myRandom == 1){
+     document.myOutcome = 'Tie'
+   }
+   
+   if (document.myRandom == 2){
+     document.myOutcome = 'win'
+       document.myTotalWins +=1
+   }
+   
+   if (document.myRandom == 3){
+      document.myOutcome = 'lose'
+      document.myTotalLosses += 1
+      
+   }
+   
+  
+   
+   
+   
+   document.getElementById('myOut').innerHTML = 'Scissors ' + document.myOutcome
+    document.all.myAttempts.value =  document.myTotalAttempts
+    document.all.myWins.value =  document.myTotalWins
+    document.all.myLosses.value = document.myTotalLosses
+ 
+   
+     }">
+     
+    
+
+
+   
+<div id="myOut">Output here</div>
+
+</body>
