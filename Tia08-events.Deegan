@@ -1,0 +1,194 @@
+<body bgcolor="ForestGreen">
+<font color=FloralWhite>
+  
+
+
+<body onmousemove="{
+
+    document.getElementById('myOut1').innerHTML =
+       'x = '+event.clientX + ', y = ' + event.clientY
+
+}"
+
+
+
+
+
+
+
+
+   onkeypress="{
+  document.getElementById('myOut1').innerHTML = 
+  String.fromCharCode(event.keyCode) + ' = ' + event.keyCode
+
+}">
+
+<h1 align=center> Events by Deegan</h1>
+
+This <b onClick="{
+  alert('hi')
+}"> is Bold </b> not this.<br><br><br><br>
+
+<input type=text value=Typehere id="myText1" onselect="{ 
+  document.getElementById('myOut1').innerHTML = 
+  document.all.myText1.value
+}">
+
+<div id="myOut1">  Output goes here</div>
+
+</body>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<p ondblclick="myFunction()"></p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Hello";
+}
+</script>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<div onmouseover="mOver(this)" onmouseout="mOut(this)"
+style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+Mouse Over Me</div>
+
+<script>
+function mOver(obj) {
+    obj.innerHTML = "HELLO"
+}
+
+function mOut(obj) {
+    obj.innerHTML = "Mouse Over Me"
+}
+</script>
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+.droptarget {
+    float: left;
+    width: 100px;
+    height: 35px;
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+</head>
+<body>
+
+<p>Drag it between the rectangles</p>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">Drag me!</p>
+</div>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<p style="clear:both;"><strong> </p>
+
+<p id="demo"></p>
+
+<script>
+function dragStart(event) {
+    event.dataTransfer.setData("Text", event.target.id);
+}
+
+function dragging(event) {
+    document.getElementById("demo").innerHTML = "you are dragging";
+}
+
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("Text");
+    event.target.appendChild(document.getElementById(data));
+    document.getElementById("demo").innerHTML = "you dropped it";
+}
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#myDIV {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<div id="myDIV">hello</div>
+
+<p>scroll up or down on hello </p>
+
+<p><strong></strong></p>
+
+<script>
+document.getElementById("myDIV").addEventListener("wheel", myFunction);
+
+function myFunction() {
+    this.style.fontSize = "35px";
+}
+</script>
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<button ondblclick="myFunction()">Double-click me to change browser size</button>
+
+<p id="demo"></p>
+
+<p></p>
+
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Hello"; 
+}
+</script>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<body onresize="myFunction()">
+
+<p>Try to resize the browser window.</p>
+
+<script>
+function myFunction() {
+    alert("You have changed the size of the browser window!");
+}
+</script>
+
+</body>
+</html>
