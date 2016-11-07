@@ -1,4 +1,4 @@
-<h1 align=center> T1A12-Interval by Deegan</h1>
+<h1 align=center> T1A12-Interval by deegan</h1>
 <script>
 function myFunction01(){
     document.getElementById('myDiv1').style.left = 
@@ -12,8 +12,8 @@ function myFunction01(){
   //  }
   
   // this is easier
-     if (parseInt(document.getElementById('myDiv1').style.left) >= 180){
-        document.getElementById('myDiv1').style.left = 180 + 'px'  
+     if (parseInt(document.getElementById('myDiv1').style.left) >= 780){
+        document.getElementById('myDiv1').style.left = 780 + 'px'  
     }   
     
 }    
@@ -44,14 +44,14 @@ function myFunction01(){
 
 
 <input type=button value="setInterval" onclick="{
-  alert('get setInterval working')
+    document.myTime01 = setInterval('myFunction01()', 50)
 }">
 
 
 
 
 <input type=button value="clearInterval" onclick="{
-  alert('get clearInterval working')
+  window.clearInterval(document.myTime01)
 }">
 
 
@@ -64,6 +64,5 @@ function myFunction01(){
 <div id="myDiv1" style="position:relative; left:0px; top:0px; width:50px; height:40px; " >
     wow
 </div>
-
 
 
